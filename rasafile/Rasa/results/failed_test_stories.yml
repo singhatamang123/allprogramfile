@@ -1,0 +1,47 @@
+version: "2.0"
+stories:
+- story: happy path 1 (.\tests\test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_greet  # predicted: utter_botgreet
+  - intent: mood_great  # predicted: greet: amazing
+  - action: utter_happy  # predicted: utter_anthingelse
+- story: happy path 2 (.\tests\test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_greet  # predicted: utter_botgreet
+  - intent: mood_great  # predicted: greet: amazing
+  - action: utter_happy  # predicted: utter_anthingelse
+  - intent: goodbye
+  - action: utter_goodbye
+- story: sad path 1 (.\tests\test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_greet  # predicted: utter_botgreet
+  - intent: mood_unhappy  # predicted: deny: not good
+  - action: utter_cheer_up  # predicted: utter_anthingelse
+  - action: utter_did_that_help  # predicted: action_listen
+  - intent: affirm
+  - action: utter_happy  # predicted: utter_anthingelse
+- story: sad path 2 (.\tests\test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_greet  # predicted: utter_botgreet
+  - intent: mood_unhappy  # predicted: deny: not good
+  - action: utter_cheer_up  # predicted: utter_anthingelse
+  - action: utter_did_that_help  # predicted: action_listen
+  - intent: deny
+  - action: utter_goodbye  # predicted: utter_thanks
+- story: sad path 3 (.\tests\test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_greet  # predicted: utter_botgreet
+  - intent: mood_unhappy  # predicted: vegetarian: very terrible
+  - action: utter_cheer_up  # predicted: utter_anthingelse
+  - action: utter_did_that_help  # predicted: action_listen
+  - intent: deny
+  - action: utter_goodbye  # predicted: utter_thanks
+- story: bot challenge (.\tests\test_stories.yml)
+  steps:
+  - intent: bot_challenge  # predicted: goodbye: are you a bot?
+  - action: utter_iamabot

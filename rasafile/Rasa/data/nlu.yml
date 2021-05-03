@@ -1,0 +1,91 @@
+version: "2.0"
+
+nlu:
+- intent: website
+  examples: |
+    - I want to know about your [website](LINK)
+    - Tell me about your [site](LINK:website)
+    - Can i get your [webpage](LINK:website)
+- intent: what_do_you_have
+  examples: |
+    - what can i get there?
+    - what can i have to eat?
+    - Can you porvide menu?
+    - what can i get for the lunch?
+    - what is this place famous for?
+
+- intent: vegetarian
+  examples: |
+    - vegetarian
+    - pure veg
+    - pure veggie
+    - i want vegetarian food
+
+- intent: non_veg
+  examples: |
+    - non-veg
+    - non-vegetarian
+    - pure non-veg
+
+- intent: order_name_veg
+  examples: |
+    - get me 1 mix veg and paneer butter masala
+    - i want 1 mix veg and masala mushroom
+    - i want green salad
+
+- intent: order_name_non_veg
+  examples: |
+    - get me 1 egg curry and chicken butter masala
+    - i want 1 egg fry and fish curry
+    - i want 5 boiled eggs
+
+
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+

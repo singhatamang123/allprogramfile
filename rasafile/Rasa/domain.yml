@@ -1,0 +1,83 @@
+version: '2.0'
+config:
+  store_entities_as_slots: true
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet:
+    use_entities: true
+- goodbye:
+    use_entities: true
+- affirm:
+    use_entities: true
+- deny:
+    use_entities: true
+- mood_great:
+    use_entities: true
+- mood_unhappy:
+    use_entities: true
+- bot_challenge:
+    use_entities: true
+- what_do_you_have:
+    use_entities: true
+- vegetarian:
+    use_entities: true
+- non_veg:
+    use_entities: true
+- order_name_veg:
+    use_entities: true
+- order_name_non_veg:
+    use_entities: true
+- non-veg:
+    use_entities: true
+- website:
+    use_entities: true
+entities:
+- LINK
+slots:
+  LINK:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+responses:
+  utter_info:
+  - text: Here is the link website[ ]{link}
+  utter_botgreet:
+  - text: How can i help you sir?
+  utter_veg_non_veg:
+  - buttons:
+    - payload: /vegetarian
+      title: Vegetarian
+    - payload: /non_veg
+      title: Non-Vegetarian
+    text: what would you prefer
+  utter_veg:
+  - image: https://wangsgfc.files.wordpress.com/2012/11/vegetarian-menu-32.jpg
+    text: 'Here are the meals for you:'
+  utter_non_veg:
+  - image: https://www.happy-journey.com/wp-content/uploads/2012/06/South-Indian-Food-Menu-e1542124735711.jpg
+    text: 'Here are the meals for you:'
+  utter_anthingelse:
+  - text: Is there any thing else sir?
+  utter_thanks:
+  - text: Thanks. We will get your order shortly.
+  utter_goodbye:
+  - text: Bye
+  utter_greet:
+  - text: Hey! How are you?
+  utter_cheer_up:
+  - image: https://i.imgur.com/nGF1K8f.jpg
+    text: 'Here is something to cheer you up:'
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+actions:
+- utter_info
+- action_hello_world
+forms: {}
+e2e_actions: []

@@ -1,0 +1,43 @@
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+intents:
+  - greet
+  - request_init
+  - order_pizza
+  - confirm
+  - bot_challenge
+
+entities:
+  - pizza_size
+  - pizza_type
+  - pizza_amount
+
+slots:
+  pizza_size:
+    type: unfeaturized
+    influence_conversation: false
+  pizza_type:
+    type: unfeaturized
+    influence_conversation: false
+  pizza_amount:
+    type: unfeaturized
+    influence_conversation: false
+
+actions:
+  - action_pizza_order_form
+
+forms:
+  pizza_order_form: {}
+
+responses:
+  utter_greet:
+    - text: Hey!! How are you? How can i help you sir
+  utter_pizza_menu:
+    - text: Yes Sir, We Have Greek pizza, and New York-Style Pizza Available in all different sizes i.e small, medium, large.
+  utter_confirm:
+    - text: Sure!! We delivering your order ASAP!!!! Have a nice day :)
+
+
+
